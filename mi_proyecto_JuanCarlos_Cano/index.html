@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluación de Riesgo Pulmonar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen py-10 px-4 font-sans text-slate-800">
+
+  <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
+    <!-- Cabecera -->
+    <div class="bg-teal-700 px-8 py-6 text-white text-center">
+      <h1 class="text-2xl font-bold">Evaluación de Riesgo Pulmonar</h1>
+      <p class="text-teal-100 text-sm mt-1">Conectado a la API de Inferencia</p>
+    </div>
+
+    <!-- Formulario -->
+    <form id="formulario-pulmon" class="p-8 space-y-6">
+      
+      <div>
+        <label class="block text-sm font-semibold text-slate-700 mb-1">Nombre Completo</label>
+        <input type="text" id="nombre" required placeholder="Ej: Luis Martínez"
+               class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none">
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Edad Actual</label>
+          <input type="number" id="edad" min="18" max="120" required value="40"
+                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Cigarrillos al Día</label>
+          <input type="number" id="cigarrillos" min="1" max="100" required value="10"
+                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Años Fumando</label>
+          <input type="number" id="anos_fumando" min="1" max="100" required value="15"
+                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Años SIN Fumar (Pon 0 si fumas)</label>
+          <input type="number" id="anos_sin_fumar" min="0" max="100" required value="0"
+                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none">
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg border border-slate-200">
+        <input type="checkbox" id="segunda_mano" class="w-5 h-5 text-teal-700 rounded">
+        <label for="segunda_mano" class="text-sm text-slate-700 cursor-pointer">
+          Convive o trabaja habitualmente en entornos con humo de tabaco
+        </label>
+      </div>
+
+      <button type="submit" id="btn-enviar"
+              class="w-full bg-teal-700 hover:bg-teal-800 text-white font-bold py-3 px-6 rounded-lg transition duration-200 shadow-md">
+        Evaluar Riesgo
+      </button>
+    </form>
+
+    <!-- Panel de Resultados -->
+    <div id="panel-resultado" class="hidden p-8 border-t border-slate-100 bg-slate-50">
+      <div id="resultado-caja" class="p-6 rounded-xl border">
+        <!-- JavaScript inyectará aquí el resultado -->
+      </div>
+    </div>
+  </div>
+
+  <script src="./static/app.js"></script>
+</body>
+</html>
