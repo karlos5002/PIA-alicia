@@ -59,7 +59,7 @@ def calcular_riesgo(cancer_pulmon: CancerPulmon):
     paquetes_anos = (cancer_pulmon.cigarrillos_por_dia / 20) * cancer_pulmon.anos_fumando
     
     # Motor de Scoring
-    score = 70.0
+    score = 10.0
     
     if cancer_pulmon.edad_actual < 30:
         score -= 10
