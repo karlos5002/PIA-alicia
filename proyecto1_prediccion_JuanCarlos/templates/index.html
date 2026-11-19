@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riesgo de Abandono Bancario</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Evaluador de Abandono de Clientes</h1>
+            <p>Introduce los datos del cliente para calcular su riesgo de fuga.</p>
+        </header>
+
+        <form id="churn-form">
+            <div class="grid-form">
+                <div class="form-group">
+                    <label for="id_cliente">ID Cliente</label>
+                    <input type="text" id="id_cliente" value="CLI-1024" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edad">Edad (años)</label>
+                    <input type="number" id="edad" value="42" min="18" max="120" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ingresos_anuales">Ingresos Anuales (€)</label>
+                    <input type="number" id="ingresos_anuales" value="45000" step="100" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="saldo_cuenta">Saldo en Cuenta (€)</label>
+                    <input type="number" id="saldo_cuenta" value="12500" step="100" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="antiguedad_meses">Antigüedad (meses)</label>
+                    <input type="number" id="antiguedad_meses" value="36" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="num_productos">Nº Productos</label>
+                    <select id="num_productos">
+                        <option value="1">1</option>
+                        <option value="2" selected>2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tiene_tarjeta">¿Tiene Tarjeta?</label>
+                    <select id="tiene_tarjeta">
+                        <option value="1" selected>Sí (1)</option>
+                        <option value="0">No (0)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo_cuenta">Tipo de Cuenta</label>
+                    <select id="tipo_cuenta">
+                        <option value="Corriente">Corriente</option>
+                        <option value="Ahorro">Ahorro</option>
+                        <option value="Nomina">Nómina</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="canal_preferido">Canal Preferido</label>
+                    <select id="canal_preferido">
+                        <option value="App Movil">App Móvil</option>
+                        <option value="Web">Web</option>
+                        <option value="Oficina">Oficina</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="nivel_estudios">Nivel de Estudios</label>
+                    <select id="nivel_estudios">
+                        <option value="Primaria">Primaria</option>
+                        <option value="Secundaria">Secundaria</option>
+                        <option value="Grado" selected>Grado</option>
+                        <option value="Master">Máster</option>
+                        <option value="Doctorado">Doctorado</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="nivel_satisfaccion">Satisfacción</label>
+                    <select id="nivel_satisfaccion">
+                        <option value="Muy Bajo">Muy Bajo</option>
+                        <option value="Bajo">Bajo</option>
+                        <option value="Medio" selected>Medio</option>
+                        <option value="Alto">Alto</option>
+                        <option value="Muy Alto">Muy Alto</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" id="btn-submit">Calcular Riesgo</button>
+        </form>
+
+        <div id="loading" class="hidden">Procesando datos...</div>
+        <div id="error-box" class="hidden"></div>
+
+        <div id="result-card" class="hidden">
+            <h2>Resultado para <span id="res-id"></span></h2>
+            <div class="metrics">
+                <div class="metric">
+                    <span class="label">Predicción:</span>
+                    <span id="res-veredicto" class="value"></span>
+                </div>
+                <div class="metric">
+                    <span class="label">Probabilidad Abandono:</span>
+                    <span id="res-prob" class="value"></span>
+                </div>
+                <div class="metric">
+                    <span class="label">Nivel de Riesgo:</span>
+                    <span id="res-riesgo" class="badge"></span>
+                </div>
+            </div>
+            <div class="action-box">
+                <strong>Acción recomendada:</strong>
+                <p id="res-accion"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
