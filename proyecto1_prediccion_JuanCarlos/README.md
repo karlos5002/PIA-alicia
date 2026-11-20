@@ -3,8 +3,8 @@
 Aplicación web con arquitectura desacoplada (Backend FastAPI + Frontend HTML/CSS/JS) para predecir en tiempo real la probabilidad de abandono de un cliente bancario mediante un pipeline de preprocesamiento (ColumnTransformer) y un modelo KNeighborsClassifier.
 
 ##  Enlace al despliegue en producción
-* **URL de la aplicación:** https://tu-app.onrender.com
-* **Documentación interactiva (Swagger UI):** https://tu-app.onrender.com/docs
+* **URL de la aplicación:** [https://tu-app.onrender.com](https://pia-alicia-1.onrender.com)
+* **Documentación interactiva:** [https://tu-app.onrender.com/docs](https://pia-alicia-1.onrender.com/docs)
 
 ##  Instalación y ejecución en local
 
@@ -25,7 +25,3 @@ Aplicación web con arquitectura desacoplada (Backend FastAPI + Frontend HTML/CS
    uvicorn main:app --reload
 
    Acceder desde el navegador a http://127.0.0.1:8000
-
-## 📸 Captura de funcionamiento en producción
-
-![Captura de inferencia en producción](ruta_o_enlace_a_tu_captura.png)
